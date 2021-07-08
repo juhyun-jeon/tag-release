@@ -3,7 +3,7 @@ name: Release drafter
 on: 
   pull_request:
     # base branch가 main인 경우
-    branches: [main]
+    # branches: [main]
     # TODO: pull_request가 생성이 되었을 때인지 merge 되었을 때인지 구분 필요
     # merge인 경우 closed 실행 후 if에서 조절해야함
     types: [closed]
@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
     steps:
+      - name: check base branch name
+        run: echo ${GITHUB_REF##*/}
       - name: Release drafter
         uses: release-drafter/release-drafter@v5
         with:

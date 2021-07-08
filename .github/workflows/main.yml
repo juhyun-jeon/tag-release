@@ -3,11 +3,11 @@ name: Main Release
 on:
   # TODO: push, release 두 가지 모두 사용할 경우 release 시 actions 두번 실행
   # TODO: push로 하면 활용성은 높지만 v*이 아닌 마지막 커밋 명으로 actions 실행
-  push:
-    tags: [v*]
-  # release:
-    # TODO: created도 option에 들어가야 할까?
-    # types: [created]
+  # push:
+  #   tags: [v*]
+  release:
+    # TODO: created도 option에 들어가야 할까? x
+    types: [published]
 
 jobs: 
   deploy:
@@ -25,3 +25,5 @@ jobs:
       # TODO: 디플로이 진행
       - name: Deploy
         run: echo "deploy"
+
+      # TODO: release가 끝난 뒤 다음 버전 Tags를 draft해야함!
