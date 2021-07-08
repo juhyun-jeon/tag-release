@@ -1,9 +1,9 @@
 name: Main Release
 
 on:
-  push:
-    tags: 
-      - 'v*'
+  # push:
+  #   tags: 
+  #     - 'v*'
   release:
     # TODO: created도 option에 들어가야 할까?
     types: [published]
