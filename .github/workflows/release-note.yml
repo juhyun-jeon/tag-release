@@ -10,9 +10,8 @@ on:
 
 jobs:
   build:
-    if: github.event.pull_request.merged == 'true'
     runs-on: ubuntu-latest
-
+    if: github.event.pull_request.merged == true
     steps:
       - name: Release drafter
       - uses: release-drafter/release-drafter@v5
