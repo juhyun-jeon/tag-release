@@ -23,6 +23,6 @@ jobs:
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
         with:
-          branch: ${GITHUB_REF#refs/heads/}
+          branch: ${{github.ref#refs/heads/}}
           delete-branch: true
           assignees: ${{github.actor}}
