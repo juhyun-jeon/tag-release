@@ -10,15 +10,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Reset promotion branch
-        run: |
-          echo ${GITHUB_REF##*/}
-          git fetch origin ${GITHUB_REF##*/}:${GITHUB_REF##*/}
-          git reset --hard ${GITHUB_REF##*/}
+      # - name: Reset promotion branch
+      #   run: |
+      #     echo ${GITHUB_REF##*/}
+      #     git fetch origin ${GITHUB_REF##*/}:${GITHUB_REF##*/}
+      #     git reset --hard ${GITHUB_REF##*/}
 
       # Q: 이미 push가 되어 pull request가 생성되었을 때는 어떻게?
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
         with:
+          base: main
           delete-branch: true
           assignees: ${{github.actor}}
