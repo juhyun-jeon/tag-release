@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with: main
+        with:
+          ref: main
 
       # - name: Reset promotion branch
       #   run: |
