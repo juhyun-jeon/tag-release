@@ -5,7 +5,8 @@ on:
     tags: 
       - 'v*'
   release:
-    types: [created]
+    # TODO: created도 option에 들어가야 할까?
+    types: [published]
 
 jobs:
   build:
