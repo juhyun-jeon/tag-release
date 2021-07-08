@@ -25,3 +25,5 @@ jobs:
       # TODO: 디플로이 진행
       - name: Deploy
         run: echo "deploy"
+
+      # TODO: release가 끝난 뒤 다음 버전 Tags를 draft해야함!
