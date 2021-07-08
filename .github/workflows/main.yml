@@ -13,8 +13,10 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Run when main pushed with tags
-        if: github.ref == 'refs/heads/main'
-        run: echo "BRANCH=$(echo ${GITHUB_REF##*/})" >> $GITHUB_ENV
+        # if: github.ref == 'refs/heads/main'
+        run: |
+          echo ${GITHUB_REF}
+          echo "BRANCH=$(echo ${GITHUB_REF##*/})" >> $GITHUB_ENV
 
       - name: Run a one-line script
         run: echo Hello, world!
