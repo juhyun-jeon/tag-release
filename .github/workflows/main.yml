@@ -7,14 +7,20 @@ on:
     tags: [v*]
   # release:
     # TODO: created도 option에 들어가야 할까?
-    # types: [published]
+    # types: [created]
 
 jobs: 
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
+
+      # - name: Create Release
+      #   uses: actions/create-release@v1
+      #   with:
+      #     tag_name: ${{ github.ref }}
+      #     release_name: Release ${{ github.ref }}
+      #     body: |
 
       # TODO: 디플로이 진행
       - name: Deploy
