@@ -4,6 +4,8 @@ on:
   push:
     tags: 
       - 'v*'
+  release:
+    types: [created]
 
 jobs:
   build:
@@ -11,15 +13,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
-      - name: Get branch name
-        id: branch-name
-        uses: tj-actions/branch-names@v4.5
-
-      - name: Run when main pushed with tags
-        # if: github.ref == 'refs/heads/main'
-        run: |
-          echo "branch: ${{ steps.branch-name.outputs.current_branch }}"
 
       - name: Run a one-line script
         run: echo Hello, world!
