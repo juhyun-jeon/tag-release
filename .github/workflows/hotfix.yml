@@ -2,23 +2,26 @@ name: Hotfix Release
 
 on:
   push:
-    branches: [ hotfix/* ]
+    branches: 
+      - 'hotfix/*'
 
 jobs:
   hotfix-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: main
 
       - name: Reset promotion branch
         run: |
-          echo ${GITHUB_REF##*/}
-          git fetch origin ${GITHUB_REF##*/}:${GITHUB_REF##*/}
-          git reset --hard ${GITHUB_REF##*/}
+          git fetch origin ${GITHUB_REF}:${GITHUB_REF}
+          git reset --hard ${GITHUB_REF}
 
       # Q: 이미 push가 되어 pull request가 생성되었을 때는 어떻게?
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
         with:
+          branch: ${{github.ref}}
           delete-branch: true
           assignees: ${{github.actor}}
