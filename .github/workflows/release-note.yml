@@ -3,15 +3,13 @@ name: Release drafter
 on:
   #main이 push되었을 때로 바꿀 수 있을듯!! XXXX
   pull_request:
-    # base branch가 main인 경우
-    # branches: [main]
-    # TODO: pull_request가 생성이 되었을 때인지 merge 되었을 때인지 구분 필요
-    # merge인 경우 closed 실행 후 if에서 조절해야함
     types: [closed]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    # feature가 base인 pull request에 대해서 github actions가 생기기는 하지만 작동은 하지 않음
+    # 작동하지 않는 actions 기록이 많이 남음...
     if: github.event.pull_request.merged == true && github.ref == 'main'
     steps:
       - name: check base branch name
