@@ -3,5 +3,11 @@ tag-template: "v$RESOLVED_VERSION"
 template: |
   # What's Changed
   $CHANGES
+# sort-by 옵션 : merge_by, title
 sort-by: "title"
+version-resolver:
+  minor:
+    labels:
+      - "minor"
+  default: minor
 change-template: "- $TITLE @$AUTHOR (#$NUMBER)"
