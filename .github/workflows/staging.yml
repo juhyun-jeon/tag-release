@@ -1,6 +1,7 @@
 name: Staging
 
 on:
+  # release-note.yml에 들어갈 수 있음 pull request가 끝날 때만 실행되도록
   push:
     branches: [main]
 
