@@ -11,4 +11,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Staging
-        run: Staging
+        run: echo Staging
