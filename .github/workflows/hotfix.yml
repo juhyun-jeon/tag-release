@@ -22,5 +22,6 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           branch: ${{github.ref}}
+          title: ${{ github.event.head_commit.message }}
           delete-branch: true
           assignees: ${{github.actor}}
