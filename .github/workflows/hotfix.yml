@@ -2,8 +2,10 @@ name: Hotfix Release
 
 on:
   push:
-    branches: 
-      - 'hotfix/*'
+    branches:
+      - 'hotfix/**''
+    branches-ignore:
+      - main
 
 jobs:
   hotfix-deploy:

@@ -12,7 +12,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true && github.ref === 'main'
+    if: github.event.pull_request.merged == true && github.ref == 'main'
     steps:
       - name: check base branch name
         run: echo ${{github.ref}}
