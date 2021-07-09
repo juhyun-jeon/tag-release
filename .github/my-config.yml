@@ -1,16 +1,7 @@
-name-template: 'v$RESOLVED_VERSION'
-tag-template: 'v$RESOLVED_VERSION'
+name-template: "v$RESOLVED_VERSION"
+tag-template: "v$RESOLVED_VERSION"
 template: |
   # What's Changed
   $CHANGES
-categories:
-  - title: '🚀 Features'
-    labels: 'feature'
-  - title: '🐛 Bug Fixes'
-    labels:
-      - 'fix'
-  - title: '🧰 Maintenance'
-    labels: 
-      - 'chore'
-      - 'refactor'
-change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+sort-by: "title"
+change-template: "- $TITLE @$AUTHOR (#$NUMBER)"

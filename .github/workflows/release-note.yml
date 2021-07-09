@@ -1,6 +1,6 @@
 name: Release drafter
 
-on: 
+on:
   pull_request:
     # base branch가 main인 경우
     # branches: [main]
@@ -14,7 +14,8 @@ jobs:
     if: github.event.pull_request.merged == true
     steps:
       - name: check base branch name
-        run: echo ${GITHUB_REF##*/}
+        run: echo ${{github.ref}}
+      # pull request 생성 시 자동으로 label이 설정되도록 한다면? 개발자가 불편하지 않을듯...?
       - name: Release drafter
         uses: release-drafter/release-drafter@v5
         with:
