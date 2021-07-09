@@ -3,9 +3,7 @@ name: Hotfix Release
 on:
   push:
     branches:
-      - 'hotfix/**''
-    branches-ignore:
-      - main
+      - "hotfix/*"
 
 jobs:
   hotfix-deploy:
