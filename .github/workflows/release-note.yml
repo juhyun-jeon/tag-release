@@ -1,16 +1,16 @@
 name: Release drafter
 
 on:
-  #main이 push되었을 때로 바꿀 수 있을듯!! 안됨
-  pull_request:
-    types: [closed]
-  # hotfix에서는 이뤄지면 안될듯... commit 명이 달라서 release note에 적히는 commit이 합쳐짐
+  #main이 push되었을 때로 바꿀 수 있을듯!! XXXX
+  push:
+    branches:
+      - main
+  # hotfix에서는 이뤄지면 안될듯.... commit 명이 달라서 release note에 적히는 commit이 합쳐짐
 jobs:
   build:
     runs-on: ubuntu-latest
     # feature가 base인 pull request에 대해서 github actions가 생기기는 하지만 작동은 하지 않음
-    # 작동하지 않는 actions 기록이 많이 남음
-    if: github.event.pull_request.merged == true && github.base_ref == 'main'
+    # 작동하지 않는 actions 기록이 많이 남음...
     steps:
       - name: Release drafter
         uses: release-drafter/release-drafter@v5
