@@ -5,7 +5,6 @@ on:
   pull_request:
     types: [closed]
   # hotfix에서는 이뤄지면 안될듯... commit 명이 달라서 release note에 적히는 commit이 합쳐짐
--
 jobs:
   build:
     runs-on: ubuntu-latest
