@@ -1,4 +1,4 @@
-name: Hotfix Release
+name: hotfix_pr
 
 on:
   push:
@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: main
 
       - name: Reset promotion branch
         run: |
