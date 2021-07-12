@@ -25,3 +25,4 @@ jobs:
           title: ${{ github.event.head_commit.message }}
           delete-branch: true
           assignees: ${{github.actor}}
+      # conflict가 생길 경우 local hotfix에서 main을 pull 받거나 git에서 보고 직접 고쳐야함
