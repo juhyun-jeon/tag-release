@@ -13,10 +13,6 @@ jobs:
     # 작동하지 않는 actions 기록이 많이 남음...
     if: github.event.pull_request.merged == true && github.base_ref == 'main' && !startsWith(github.head_ref, 'hotfix/')
     steps:
-      - name: check base branch name
-        run: |
-          echo ${{github.base_ref}}
-          echo ${{github.head_ref}}
       # pull request 생성 시 자동으로 label이 설정되도록 한다면? 개발자가 불편하지 않을듯...?
       - name: Release drafter
         uses: release-drafter/release-drafter@v5
