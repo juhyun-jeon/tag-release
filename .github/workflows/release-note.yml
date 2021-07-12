@@ -6,14 +6,12 @@ on:
     branches:
       - main
   # hotfix에서는 이뤄지면 안될듯.... commit 명이 달라서 release note에 적히는 commit이 합쳐짐
-
 jobs:
   build:
     runs-on: ubuntu-latest
     # feature가 base인 pull request에 대해서 github actions가 생기기는 하지만 작동은 하지 않음
     # 작동하지 않는 actions 기록이 많이 남음...
     steps:
-      # pull request 생성 시 자동으로 label이 설정되도록 한다면? 개발자가 불편하지 않을듯...?
       - name: Release drafter
         uses: release-drafter/release-drafter@v5
         with:
