@@ -22,6 +22,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           branch: ${{github.ref}}
+          # push를 몇번 하지 않는다면 title을 지정해 주는 것이 좋지만 push할 때마다 계속 바뀐다는 단점이 있음
           title: ${{ github.event.head_commit.message }}
           delete-branch: true
           assignees: ${{github.actor}}
