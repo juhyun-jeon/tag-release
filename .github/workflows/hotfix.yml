@@ -23,7 +23,7 @@ jobs:
         with:
           branch: ${{github.ref}}
           # push를 몇번 하지 않는다면 title을 지정해 주는 것이 좋지만 push할 때마다 계속 바뀐다는 단점이 있음
-          title: ${{ github.event.head_commit.message }}
+          title: AUTO - ${{github.sha}}
           delete-branch: true
           assignees: ${{github.actor}}
       # conflict가 생길 경우 local hotfix에서 main을 pull 받거나 git에서 보고 직접 고쳐야함
