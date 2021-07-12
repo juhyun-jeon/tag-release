@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     # feature가 base인 pull request에 대해서 github actions가 생기기는 하지만 작동은 하지 않음
     # 작동하지 않는 actions 기록이 많이 남음...
-    if: github.event.pull_request.merged == true && github.base_ref == 'main' && github.head_ref != 'hotfix/*'
+    if: github.event.pull_request.merged == true && github.base_ref == 'main' && startsWith(github.head_ref, 'hotfix/')
     steps:
       - name: check base branch name
         run: |
