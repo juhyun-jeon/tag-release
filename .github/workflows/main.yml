@@ -5,11 +5,11 @@ on:
   # TODO: push로 하면 활용성은 높지만 v*이 아닌 마지막 커밋 명으로 actions 실행
   # push:
   #   tags: [v*]
-  release:
-    # TODO: created도 option에 들어가야 할까? x
-    types: [published]
+  push:
+    tags:
+      - v*
 
-jobs: 
+jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
